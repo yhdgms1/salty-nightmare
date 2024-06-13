@@ -2,11 +2,11 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": 9,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "salty-nightmare:salt_block"
+          "name": "salty-nightmare:salt_powder"
         }
       ],
       "conditions": [

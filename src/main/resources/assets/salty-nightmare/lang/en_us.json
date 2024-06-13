@@ -1,5 +1,6 @@
 {
   "item.salty-nightmare.salt_block": "Salt Block",
   "block.salty-nightmare.salt_block": "Salt Block",
-  "itemGroup.salty-nightmare.group": "Salty Nightmare"
+  "itemGroup.salty-nightmare.group": "Salty Nightmare",
+  "item.salty-nightmare.salt_powder": "Salt"
 }

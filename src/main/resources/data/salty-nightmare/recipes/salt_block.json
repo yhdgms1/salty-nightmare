@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "tag": "salty-nightmare:salt_powder"
+    }
+  },
+  "result": {
+    "item": "salty-nightmare:salt_block",
+    "count": 1
+  }
+}
