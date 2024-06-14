@@ -2,18 +2,19 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 9,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
           "name": "salty-nightmare:salt_powder"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
+      "rolls": 9.0
     }
   ]
 }

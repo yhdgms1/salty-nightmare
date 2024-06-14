@@ -3,16 +3,16 @@ package org.saltynightmare;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.*;
-import net.minecraft.potion.Potion;
-import net.minecraft.recipe.BrewingRecipeRegistry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
+import net.minecraft.util.ColorCode;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +27,7 @@ public class SaltyNightmare implements ModInitializer {
 	/**
 	 * Blocks
 	 */
-	public static final Block SALT_BLOCK = new SaltBlock(Block.Settings.create().strength(0.5f).sounds(BlockSoundGroup.SAND));
+	public static final Block SALT_BLOCK = new SaltBlock(new ColorCode(13356278), AbstractBlock.Settings.create().instrument(Instrument.SNARE).sounds(BlockSoundGroup.SAND).mapColor(MapColor.WHITE_GRAY).strength(0.5F));
 	/**
 	 * Items
 	 */

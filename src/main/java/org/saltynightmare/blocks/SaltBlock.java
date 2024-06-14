@@ -1,46 +1,31 @@
 package org.saltynightmare.blocks;
 
-import com.mojang.serialization.MapCodec;
-import net.minecraft.block.*;
+import net.minecraft.block.ColoredFallingBlock;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ColorCode;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-// todo: сделать так чтобы при падении не ломался, а ставился
-public class SaltBlock extends FallingBlock {
-    public static final MapCodec<SaltBlock> CODEC = createCodec(SaltBlock::new);
-    public static final VoxelShape COLLISION_SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
+public class SaltBlock extends ColoredFallingBlock {
 
-    public SaltBlock(Settings settings) {
-        super(settings);
+    public SaltBlock(ColorCode colorCode, Settings settings) {
+        super(colorCode, settings);
     }
 
     @Override
-    protected MapCodec<SaltBlock> getCodec() {
-        return CODEC;
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (entity instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) entity;
-
-            /**
-             * Когда меньше половины HP касание блока соли будет наносить урон, т.к. соль на рану
-             */
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+        if (entity instanceof PlayerEntity player) {
             if (player.getHealth() < player.getMaxHealth() / 2) {
                 player.damage(world.getDamageSources().generic(), 0.5F);
             }
         }
-
-        super.onEntityCollision(state, world, pos, entity);
     }
 
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return COLLISION_SHAPE;
+    @Override
+    public void onEntityLand(BlockView world, Entity entity) {
+        super.onEntityLand(world, entity);
     }
 }
