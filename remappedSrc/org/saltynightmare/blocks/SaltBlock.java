@@ -9,7 +9,6 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-// todo: сделать так чтобы при падении не ломался, а ставился
 public class SaltBlock extends FallingBlock {
     public static final MapCodec<SaltBlock> CODEC = createCodec(SaltBlock::new);
     public static final VoxelShape COLLISION_SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
@@ -24,7 +23,6 @@ public class SaltBlock extends FallingBlock {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) entity;
@@ -40,7 +38,7 @@ public class SaltBlock extends FallingBlock {
         super.onEntityCollision(state, world, pos, entity);
     }
 
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return COLLISION_SHAPE;
     }
 }

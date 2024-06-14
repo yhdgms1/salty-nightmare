@@ -17,7 +17,6 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.saltynightmare.potions.PotionsMaker;
 import org.saltynightmare.blocks.*;
 
 public class SaltyNightmare implements ModInitializer {
@@ -47,8 +46,6 @@ public class SaltyNightmare implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		PotionsMaker.registerPotions();
-
 		/**
 		 * Block & Block Items
 		 */
@@ -59,11 +56,14 @@ public class SaltyNightmare implements ModInitializer {
 		 * Items
 		 */
 		Registry.register(Registries.ITEM, new Identifier(NAMESPACE, "salt_powder"), SALT_POWDER);
+//		Registry.register(Registries.POTION, new Identifier(NAMESPACE, "salty_potion"), SALTY_POTION);
 
 		/**
 		 * Item Group
 		 */
 		Registry.register(Registries.ITEM_GROUP, new Identifier(NAMESPACE, "salty_nightmare_group"), ITEM_GROUP);
+
+//		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, Items.WITHER_ROSE, ModPotions.EXAMPLE_POTION);
 
 		LOGGER.info("Hello Fabric world!");
 	}
