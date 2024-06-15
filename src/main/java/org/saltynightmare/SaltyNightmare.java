@@ -17,7 +17,8 @@ public class SaltyNightmare implements ModInitializer {
 		BlockItemsRegister.registerBlockItems();
 		ItemsRegister.registerItems();
 		PotionRegister.registerPotions();
-		EffectsRegistry.registerEffects();
+		EffectsRegister.registerEffects();
 		ItemGroupRegister.registerItemGroups();
+		LootTablesRegister.registerVillageLootTables();
 	}
 }

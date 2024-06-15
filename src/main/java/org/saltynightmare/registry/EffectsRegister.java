@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import org.saltynightmare.SaltyNightmare;
 import org.saltynightmare.effects.ThirstEffect;
 
-public class EffectsRegistry extends StatusEffects {
+public class EffectsRegister extends StatusEffects {
     public static StatusEffect THIRST = new ThirstEffect();
 
     public static void registerEffects () {
@@ -16,6 +16,6 @@ public class EffectsRegistry extends StatusEffects {
     }
 
     private static StatusEffect registerStatusEffect(String name, StatusEffect effect) {
-        return Registry.register(Registries.STATUS_EFFECT, new Identifier(SaltyNightmare.MOD_ID, "thirst"), effect);
+        return Registry.register(Registries.STATUS_EFFECT, new Identifier(SaltyNightmare.MOD_ID, name), effect);
     }
 }
