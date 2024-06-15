@@ -6,11 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ColorCode;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class SaltBlock extends ColoredFallingBlock {
-
     public SaltBlock(ColorCode colorCode, Settings settings) {
         super(colorCode, settings);
     }
@@ -22,10 +20,5 @@ public class SaltBlock extends ColoredFallingBlock {
                 player.damage(world.getDamageSources().generic(), 0.5F);
             }
         }
-    }
-
-    @Override
-    public void onEntityLand(BlockView world, Entity entity) {
-        super.onEntityLand(world, entity);
     }
 }

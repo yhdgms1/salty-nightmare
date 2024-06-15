@@ -9,7 +9,7 @@ import org.saltynightmare.registry.*;
 
 public class SaltyNightmare implements ModInitializer {
 	public static final String MOD_ID = "salty-nightmare";
-	public static final Logger LOGGER = LoggerFactory.getLogger("salty-nightmare");
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
@@ -17,6 +17,7 @@ public class SaltyNightmare implements ModInitializer {
 		BlockItemsRegister.registerBlockItems();
 		ItemsRegister.registerItems();
 		PotionRegister.registerPotions();
+		EffectsRegistry.registerEffects();
 		ItemGroupRegister.registerItemGroups();
 	}
 }

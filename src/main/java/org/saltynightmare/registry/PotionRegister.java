@@ -1,7 +1,6 @@
 package org.saltynightmare.registry;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
@@ -12,7 +11,7 @@ import net.minecraft.util.Identifier;
 import org.saltynightmare.SaltyNightmare;
 
 public class PotionRegister {
-    public static final Potion SALTY_POTION = registerPotion("salty_potion", new StatusEffectInstance[]{ new StatusEffectInstance(StatusEffects.HUNGER, 100, 0) });
+    public static final Potion SALTY_POTION = registerPotion("salty_potion", new StatusEffectInstance[]{ new StatusEffectInstance(EffectsRegistry.THIRST, 100, 0) });
 
     public static void registerPotions() {
         registerRecipe(Potions.WATER, ItemsRegister.SALT_POWDER, SALTY_POTION);

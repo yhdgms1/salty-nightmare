@@ -2,5 +2,10 @@
   "item.salty-nightmare.salt_block": "Блок соли",
   "block.salty-nightmare.salt_block": "Блок соли",
   "itemGroup.salty-nightmare.group": "Солевой кошмар",
-  "item.salty-nightmare.salt_powder": "Соль"
+  "item.salty-nightmare.salt_powder": "Соль",
+  "item.minecraft.potion.effect.salty_potion": "Солёная вода",
+  "item.minecraft.splash_potion.effect.salty_potion": "Взрывная солёная вода",
+  "item.minecraft.lingering_potion.effect.salty_potion": "Туманная солёная вода",
+  "item.minecraft.tipped_arrow.effect.salty_potion": "Солёная стрела",
+  "effect.salty-nightmare.thirst": "Жажда"
 }
