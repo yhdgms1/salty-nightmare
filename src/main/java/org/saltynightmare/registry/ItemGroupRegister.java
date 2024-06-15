@@ -1,14 +1,13 @@
 package org.saltynightmare.registry;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.potion.PotionUtil;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import org.saltynightmare.SaltyNightmare;
 
 public class ItemGroupRegister {
@@ -27,11 +26,13 @@ public class ItemGroupRegister {
                 /*
                     Potions
                  */
-                entries.add(PotionUtil.setPotion(new ItemStack(Items.POTION), PotionRegister.SALTY_POTION));
+                entries.add(PotionContentsComponent.createStack(Items.POTION, PotionRegister.SALTY_POTION));
+                entries.add(PotionContentsComponent.createStack(Items.LINGERING_POTION, PotionRegister.SALTY_POTION));
+                entries.add(PotionContentsComponent.createStack(Items.SPLASH_POTION, PotionRegister.SALTY_POTION));
             })
             .build();
 
     public static void registerItemGroups() {
-        Registry.register(Registries.ITEM_GROUP, new Identifier(SaltyNightmare.MOD_ID, "salty_nightmare_group"), ITEM_GROUP);
+        Registry.register(Registries.ITEM_GROUP, SaltyNightmare.id( "salty_nightmare_group"), ITEM_GROUP);
     }
 }

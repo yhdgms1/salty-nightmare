@@ -11,12 +11,12 @@ public class ThirstEffect extends StatusEffect {
     }
 
     @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        super.applyUpdateEffect(entity, amplifier);
-
+    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (entity instanceof PlayerEntity player) {
             player.damage(entity.getDamageSources().generic(), 0.5F);
         }
+
+        return true;
     }
 
     @Override

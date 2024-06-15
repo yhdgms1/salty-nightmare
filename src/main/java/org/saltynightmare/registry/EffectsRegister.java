@@ -4,18 +4,18 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.registry.entry.RegistryEntry;
 import org.saltynightmare.SaltyNightmare;
 import org.saltynightmare.effects.ThirstEffect;
 
 public class EffectsRegister extends StatusEffects {
-    public static StatusEffect THIRST = new ThirstEffect();
+    public static RegistryEntry<StatusEffect> THIRST;
 
-    public static void registerEffects () {
-        registerStatusEffect("thirst", THIRST);
+    private static RegistryEntry<StatusEffect> register(String id, StatusEffect statusEffect) {
+        return Registry.registerReference(Registries.STATUS_EFFECT, SaltyNightmare.id(id), statusEffect);
     }
 
-    private static StatusEffect registerStatusEffect(String name, StatusEffect effect) {
-        return Registry.register(Registries.STATUS_EFFECT, new Identifier(SaltyNightmare.MOD_ID, name), effect);
+    static {
+        THIRST = register("thirst", new ThirstEffect());
     }
 }
