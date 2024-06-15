@@ -1,21 +1,21 @@
-package org.saltynightmare.potions;
+package org.saltynightmare.registry;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.recipe.BrewingRecipeRegistry;
-import org.saltynightmare.SaltyNightmare;
-
 import net.minecraft.item.Item;
-import net.minecraft.potion.*;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
+import net.minecraft.recipe.BrewingRecipeRegistry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import org.saltynightmare.SaltyNightmare;
 
-public class PotionsMaker {
+public class PotionRegister {
     public static final Potion SALTY_POTION = registerPotion("salty_potion", new StatusEffectInstance[]{ new StatusEffectInstance(StatusEffects.HUNGER, 100, 0) });
 
     public static void registerPotions() {
-        registerRecipe(Potions.WATER, SaltyNightmare.SALT_POWDER, SALTY_POTION);
+        registerRecipe(Potions.WATER, ItemsRegister.SALT_POWDER, SALTY_POTION);
     }
 
     protected static void registerRecipe(Potion input, Item item, Potion output) {
@@ -23,6 +23,6 @@ public class PotionsMaker {
     }
 
     protected static Potion registerPotion(String name, StatusEffectInstance[] effect) {
-        return Registry.register(Registries.POTION, new Identifier(SaltyNightmare.NAMESPACE, name), new Potion(effect));
+        return Registry.register(Registries.POTION, new Identifier(SaltyNightmare.MOD_ID, name), new Potion(effect));
     }
 }

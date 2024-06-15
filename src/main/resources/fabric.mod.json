@@ -3,13 +3,13 @@
 	"id": "salty-nightmare",
 	"version": "${version}",
 	"name": "Salty Nightmare",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod that adds blocks and items related to salt",
 	"authors": [
 		"yhdgms1"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/yhdgms1/salty-nightmare",
+		"sources": "https://github.com/yhdgms1/salty-nightmare"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/salty-nightmare/icon.png",

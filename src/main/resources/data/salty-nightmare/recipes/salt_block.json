@@ -7,11 +7,11 @@
   ],
   "key": {
     "W": {
-      "tag": "salty-nightmare:salt_powder"
+      "item": "salty-nightmare:salt_powder"
     }
   },
   "result": {
-    "key": "salty-nightmare:salt_block",
+    "item": "salty-nightmare:salt_block",
     "count": 1
   }
 }
